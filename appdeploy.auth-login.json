@@ -1,0 +1,14 @@
+{
+  "methods": ["google", "apple", "x", "email"],
+  "headline": "Enter the MysteryBox network",
+  "subtitle": "Authenticate to preserve your investigation progress.",
+  "style": {
+    "mode": "dark",
+    "accentColor": "#e4434d",
+    "backgroundColor": "#090b0f",
+    "panelColor": "#111820",
+    "textColor": "#e8e9ec",
+    "fontFamily": "Manrope, Arial, sans-serif",
+    "borderRadius": 4
+  }
+}

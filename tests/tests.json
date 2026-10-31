@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Open the first case and recover evidence",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "case directory navigation",
+      "case briefing",
+      "evidence recovery",
+      "investigation progress"
+    ],
+    "description": "Verifies the primary mystery can be opened and evidence can be examined.",
+    "steps": [
+      "Open Discover from the main navigation",
+      "Open CASE 001: The Vanishing Frequency",
+      "Inspect The final recording evidence card"
+    ],
+    "expected": "The case briefing is visible, the final recording is marked recovered, and investigation progress increases."
+  },
+  {
+    "name": "Interview suspects and log an interview",
+    "viewport": "desktop",
+    "covers": [
+      "suspect selection",
+      "interview statements",
+      "interview logging"
+    ],
+    "description": "Verifies selecting a person of interest displays their statement and allows an interview to be logged.",
+    "steps": [
+      "Open CASE 001",
+      "Select Jonah Reed in Persons of Interest",
+      "Click LOG INTERVIEW"
+    ],
+    "expected": "Jonah Reed's statement and follow-up question are visible, and the interview is marked as logged."
+  },
+  {
+    "name": "Require evidence and interviews before accusation",
+    "viewport": "mobile",
+    "covers": [
+      "accusation validation",
+      "negative guardrail",
+      "mobile investigation workflow"
+    ],
+    "description": "Verifies an accusation cannot be submitted before the minimum investigation requirements are met on mobile.",
+    "steps": [
+      "Open CASE 001 on a mobile viewport",
+      "Select a person in the Final Accusation field",
+      "Submit the accusation without collecting evidence or interviews"
+    ],
+    "expected": "A notice explains that at least 3 evidence items and 2 interviews are required, and no ending is generated."
+  },
+  {
+    "name": "Save and restore authenticated investigation progress",
+    "viewport": "desktop",
+    "covers": [
+      "authentication sign in",
+      "user-scoped progress storage",
+      "progress restoration after reload"
+    ],
+    "description": "Verifies a signed-in investigator can save progress and restore it in a later session.",
+    "steps": [
+      "Sign in using an available provider",
+      "Recover The final recording and log an interview",
+      "Save the investigation",
+      "Refresh the page"
+    ],
+    "expected": "The recovered evidence and logged interview remain visible after the page reloads."
+  },
+  {
+    "name": "Submit an eligible accusation and reopen the case",
+    "viewport": "desktop",
+    "covers": [
+      "final accusation outcome",
+      "multiple case outcomes",
+      "reopen investigation"
+    ],
+    "description": "Verifies an eligible investigator receives a narrative case outcome and can reopen the investigation.",
+    "steps": [
+      "Open CASE 001",
+      "Recover at least 3 evidence items",
+      "Log interviews with at least 2 suspects",
+      "Select Mara Voss and submit the accusation",
+      "Click REOPEN INVESTIGATION"
+    ],
+    "expected": "A case update narrative appears, then the accusation and ending clear so the investigation can continue."
+  }
+]
